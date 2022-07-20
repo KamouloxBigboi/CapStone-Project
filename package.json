@@ -1,0 +1,22 @@
+{
+  "name": "sante-connect-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.matrice.io/tremplin-full-stack-projet-capstone-869/mguidad-tremplin-full-stack-projet-capstone"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.5"
+  },
+  "type": "module"
+}
