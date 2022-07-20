@@ -2,8 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import "./mainpage.css"
+import "./page.css"
 import PostCard from "./PostCard";
+import NavBar from "./NavBar";
+import Footer from "./Footer"
 
 // import id from "./PageArticle/:id"
 
@@ -42,20 +44,24 @@ export default function MainPage() {
         // Mapper tous les posts fetchés et afficher tous les liens
     
     return (
-        
-        <main style={{ padding: "1rem 0" }}>
 
-            <h2> Retrouvez tous les articles du mois </h2>
-            
-            <div id="test">
-                { posts.map((post) => {
-                    return (
-                        <Link to={`/posts/${post.id}`} style={linkStyle}>
-                            <PostCard post={post} />
-                        </Link>
-                    )
-                })}
-            </div>
-        </main>
-            );
-    }
+        <>
+            {/* <NavBar /> */}
+            <main style={{ padding: "1rem 0"}}>
+
+                <h2> Retrouvez tous les articles du mois </h2>
+    
+                <div id="posts_box">
+                    { posts.map((post) => {
+                        return (
+                            <Link to={`/posts/${post.id}`} style={linkStyle}>
+                                <PostCard post={post} />
+                            </Link>
+                        )
+                    })}
+                </div>
+                <Footer />
+            </main>
+        </>
+    );
+}

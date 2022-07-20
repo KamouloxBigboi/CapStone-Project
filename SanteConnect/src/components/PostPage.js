@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import MainPage from "./MainPage";
-import './postpage.css'
+import './page.css'
+import Footer from "./Footer";
 
 
 export default function PostPage() {
@@ -15,7 +15,7 @@ export default function PostPage() {
     
     const [posts, setPosts] = useState([]);
     let params = useParams();
-    
+
     const getAllPosts = () => { 
         fetch("https://jsonplaceholder.typicode.com/posts/")
             .then((response) => response.json())
@@ -25,7 +25,6 @@ export default function PostPage() {
     }
 
     useEffect(() => { 
-        
         console.log(params);
         getAllPosts()
     }, [])
@@ -33,18 +32,18 @@ export default function PostPage() {
         // Mapper tous les posts fetchés et retourner un seul
     
     return (
-        
-        <main style={{ padding: "1rem 0" }}>
-
-            <h2> Votre article santé de la semaine </h2>
-
-            <div>
-                { posts.map((post) => {
-                    return (
-                            <p> {post.body} </p>
-                    )
-                })}
-            </div>
+        <>
+            <main style={{ padding: "1rem 0" }}>
+                <h2> Votre article santé de la semaine </h2>
+                <div>
+                    { posts.map((post) => {
+                        return (
+                                <p> {post.body} </p>
+                        )
+                    })}
+                </div>
         </main>
-            );
-    }
+        <Footer />
+        </>
+    );
+}
