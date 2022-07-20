@@ -112,7 +112,7 @@ export default function App() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <Link href="./signup" variant="body2">
                     {"Pas de compte ? Inscrivez-vous "}
                   </Link>
                 </Grid>
