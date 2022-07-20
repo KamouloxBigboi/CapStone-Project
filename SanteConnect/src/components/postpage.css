@@ -1,6 +1,14 @@
-* {
-    height: 100px;
-    line-height: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap');
+
+h2 {
+    margin: 3rem;
     text-align: center;
-    border: 2px dashed #f69c55;
+    font-family: 'Edu TAS Beginner', cursive;
+    font-size:xx-large;
+}
+
+p {
+    text-indent: 50px;
+    margin-left: 10rem;
+    margin-right: 10rem;
 }

@@ -5,14 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import imageTest from './images/contemplative-reptile.jpg'
 
 export default function PostCard(props) {
+  console.log(imageTest);
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
-        image="./contemplative-reptile.jpg"
+        image={imageTest}
         alt="post image "
       />
       <CardContent>

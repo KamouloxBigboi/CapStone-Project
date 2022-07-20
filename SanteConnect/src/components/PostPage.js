@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import MainPage from "./MainPage";
+import './postpage.css'
 
 
 export default function PostPage() {
