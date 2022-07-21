@@ -5,7 +5,7 @@ import { BrowserRouter,
   Route,
 } from "react-router-dom";
 
-import './index.scss';
+import './index.css';
 import App from './App';
 import MainPage from './components/MainPage';
 import Forum from './components/Forum';
