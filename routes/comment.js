@@ -1,12 +1,13 @@
-import userModel from "../models/user.js";
+import commentModel from "../models/comment.js";
 import express from 'express';
 
 const router = express.Router();
+
 // Création des routes POST / GET 
 
 // show all
 router.get("/", async (request, response) => {
-  const users = await userModel.find({});
+  const users = await commentModel.find({});
 
   try {
     response.send(users);
@@ -18,21 +19,21 @@ router.get("/", async (request, response) => {
 // show one
 router.get("/:id", async (request, response) => {
   
-  const user = await userModel.findOne({ id: req.params.id });
+  const comment = await commentModel.findOne({ id: req.params.id });
 
   try {
-    response.send(user);
+    response.send(comment);
   } catch (error) {
     response.status(500).send(error);
   }
 });
 
 router.post("/", async (request, response) => {    
-    const user = new userModel(request.body);
+    const comment = new commentModel(request.body);
   
     try {
-      await user.save();
-      response.send(user);
+      await comment.save();
+      response.send(comment);
     } catch (error) {
       response.status(500).send(error);
     }
