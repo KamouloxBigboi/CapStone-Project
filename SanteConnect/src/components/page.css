@@ -16,7 +16,9 @@ h2 {
     background-color: blanchedalmond;
 }
 
-p { 
+#postPage_box {
+    background-color: blanchedalmond;
+    display: flex;
     text-indent: 50px;
     margin-left: 15rem;
     margin-right: 15rem;
@@ -43,6 +45,7 @@ main {
     background-color: #2cb6b8;
     color: black;
     text-align: end;
+    margin:auto;
     position: fixed;
     width: 100%;
     bottom: 0;

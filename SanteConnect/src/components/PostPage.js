@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './page.css'
 import Footer from "./Footer";
+import LongText from "./LongText";
 
 
 export default function PostPage() {
@@ -16,8 +17,8 @@ export default function PostPage() {
     const [posts, setPosts] = useState([]);
     let params = useParams();
 
-    const getAllPosts = () => { 
-        fetch("https://jsonplaceholder.typicode.com/posts/")
+    const getOnePost = (params) => { 
+        fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
             .then((response) => response.json())
             // .then((json) => console.log(json));
             .then((json) => setPosts(json))
@@ -26,7 +27,7 @@ export default function PostPage() {
 
     useEffect(() => { 
         console.log(params);
-        getAllPosts()
+        getOnePost()
     }, [])
 
         // Mapper tous les posts fetchés et retourner un seul
@@ -34,11 +35,18 @@ export default function PostPage() {
     return (
         <>
             <main style={{ padding: "1rem 0" }}>
-                <h2> Votre article santé de la semaine </h2>
+                <h2> Votre article santé de la semaine </h2> 
+
+                {/* Link react router vers la page principale */}
+                
+                <Link to="/mainpage" > <button> Retour aux articles </button> </Link>
+                
                 <div>
                     { posts.map((post) => {
                         return (
-                                <p> {post.body} </p>
+                                <div id="postPage_box"> 
+                                    <LongText content={post.body} limit = {50}/>
+                                </div>
                         )
                     })}
                 </div>
