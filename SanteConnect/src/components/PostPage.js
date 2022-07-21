@@ -12,16 +12,16 @@ export default function PostPage() {
     /* fonction qui Fetch tous les posts au premier  montage du composant :useEffect  */
     
     
-    // déclarer un state 'posts'
+    // déclarer un state 'post'
     
-    const [posts, setPosts] = useState([]);
+    const [post, setPost] = useState([]);
     let params = useParams();
 
-    const getOnePost = (params) => { 
+    const getOnePost = () => { 
         fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
             .then((response) => response.json())
             // .then((json) => console.log(json));
-            .then((json) => setPosts(json))
+            .then((json) => setPost(json))
             .catch((err) => console.log(err));
     }
 
@@ -30,28 +30,21 @@ export default function PostPage() {
         getOnePost()
     }, [])
 
-        // Mapper tous les posts fetchés et retourner un seul
+        // retourner un article (post) et limiter longueur texte à 50 caractères
     
     return (
         <>
             <main style={{ padding: "1rem 0" }}>
+            
                 <h2> Votre article santé de la semaine </h2> 
 
                 {/* Link react router vers la page principale */}
                 
-                <Link to="/mainpage" > <button> Retour aux articles </button> </Link>
-                
-                <div>
-                    { posts.map((post) => {
-                        return (
-                                <div id="postPage_box"> 
-                                    <LongText content={post.body} limit = {50}/>
-                                </div>
-                        )
-                    })}
-                </div>
-        </main>
-        <Footer />
+                <Link to="/mainpage" > <button id="return_button"> Retour aux articles </button> </Link>
+
+                <div id="postPage_box"> {post.body} </div>
+            </main>
+            <Footer />
         </>
     );
 }

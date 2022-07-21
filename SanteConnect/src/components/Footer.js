@@ -4,7 +4,7 @@ import './page.css'
 const Footer = () => (
   <footer className="footer">
 
-    <p> Santé Connect </p>
+    <div id="brand_footer"> Santé Connect </div>
   
   </footer>
 );
