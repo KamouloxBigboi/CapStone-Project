@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import './page.css'
 import Footer from "./Footer";
+import Comments from "./Comments/index";
 // import LongText from "./LongText";
 
 
@@ -44,6 +45,9 @@ export default function PostPage() {
 
                 <div id="postPage_Box_Title"> {post.title} </div>
                 <div id="postPage_box"> {post.body} </div>
+                <div id="comments"> 
+                  <Comments />
+                </div>
             </main>
             <Footer />
         </>
