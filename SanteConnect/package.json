@@ -21,6 +21,8 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
+    "sass": "^1.53.0",
+    "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -51,5 +53,8 @@
   "proxy": "http://localhost:5000",
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "webpack-cli": "^4.10.0"
+  }
 }

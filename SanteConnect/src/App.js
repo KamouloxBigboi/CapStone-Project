@@ -97,7 +97,7 @@ export default function App() {
                 control={<Checkbox value="remember" color="primary" />}
                 label="Se Rappeler de moi "
               />
-              <Button
+              <Button href="/mainpage"
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -107,7 +107,7 @@ export default function App() {
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="/MainPage" variant="body2">
+                  <Link href="/mainpage" variant="body2">
                     Mot de passe oublié ?
                   </Link>
                 </Grid>

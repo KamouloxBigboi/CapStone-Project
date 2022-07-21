@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&display=swap');
 
+html {
+    background: url(./images/background_connexion.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
@@ -25,23 +39,6 @@ h2 {
     font-style: italic;
     font-size: large;
 
-}
-main {
-    
-    background: url(./images/background_connexion.jpeg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    position:fixed;
-    padding:0;
-    margin:0;
-
-    top:0;
-    left:0;
-
-    width: 100%;
-    height: 100%;
 }
 
 #posts_box {
