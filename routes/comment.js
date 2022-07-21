@@ -5,7 +5,8 @@ const router = express.Router();
 
 // Création des routes POST / GET 
 
-// show all
+// Get comments
+
 router.get("/", async (request, response) => {
   const users = await commentModel.find({});
 
@@ -16,17 +17,7 @@ router.get("/", async (request, response) => {
   }
 });
 
-// show one
-router.get("/:id", async (request, response) => {
-  
-  const comment = await commentModel.findOne({ id: req.params.id });
-
-  try {
-    response.send(comment);
-  } catch (error) {
-    response.status(500).send(error);
-  }
-});
+// Post comment
 
 router.post("/", async (request, response) => {    
     const comment = new commentModel(request.body);

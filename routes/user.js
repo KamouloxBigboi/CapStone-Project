@@ -16,6 +16,7 @@ router.get("/", async (request, response) => {
 });
 
 // show one
+
 router.get("/:id", async (request, response) => {
   
   const user = await userModel.findOne({ id: req.params.id });

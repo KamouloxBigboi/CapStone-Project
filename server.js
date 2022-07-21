@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import routesUser from "./routes/user.js"
+import routesComment from "./routes/comment.js"
 const PORT = 5000
 
 const app = express();
@@ -9,6 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use("/users", routesUser)
+app.use("/comments", routesComment)
 
 app.listen(PORT, () => {
   console.log(`Server is running at port + ${PORT}`);
