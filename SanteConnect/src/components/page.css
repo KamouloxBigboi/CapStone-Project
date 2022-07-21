@@ -20,8 +20,8 @@ a:hover, a:visited, a:link, a:active
 }
 
 h2 {
-    margin-left: 15rem;
-    margin-right: 15rem;
+    margin-left: 11rem;
+    margin-right: 11rem;
     margin-top: 2rem;
     margin-bottom: 6rem;
     text-align: center;
@@ -35,8 +35,6 @@ h2 {
     font-family: 'Arial Narrow Bold';
     font-size: xx-large;
     background-color: blanchedalmond;
-    margin-left: 15rem;
-    margin-right: 15rem;
 
 }
 
@@ -46,8 +44,6 @@ h2 {
     background-color: blanchedalmond;
     display: flex;
     text-indent: 50px;
-    margin-left: 15rem;
-    margin-right: 15rem;
     font-style: italic;
     font-size: large;
     margin-bottom: 4rem;

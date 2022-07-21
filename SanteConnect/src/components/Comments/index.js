@@ -18,7 +18,8 @@ const initialContainerBackgroundClassNames = [
   'light-blue',
 ]
 
-// Write your code here
+// Création composant parent
+
 class Comments extends Component {
   state = {
     name: '',
@@ -27,16 +28,18 @@ class Comments extends Component {
     count: 0,
   }
 
-  inputValue = e => {
-    this.setState({name: e.target.value})
+  
+
+  inputValue = event => {
+    this.setState({name: event.target.value})
   }
 
-  textValue = e => {
-    this.setState({comment: e.target.value})
+  textValue = event => {
+    this.setState({comment: event.target.value})
   }
 
-  addComment = e => {
-    e.preventDefault()
+  addComment = event => {
+    event.preventDefault()
     const {name, comment} = this.state
     const firstName = name.slice(0, 1)
     const date = formatDistanceToNow(new Date())
@@ -86,23 +89,23 @@ class Comments extends Component {
         <h1 className="main-heading">Comments</h1>
         <div className="inner-holder">
           <div className="element-holder">
-            <p className="para1">Say something about 4.0 Technologies</p>
+            <p className="para1">Partager votre avis sur cet article avec la communauté !</p>
             <form className="element-holder" onSubmit={this.addComment}>
               <input
                 type="text"
                 className="name-field"
-                placeholder="Your Name"
+                placeholder="Nom ou Pseudonyme"
                 onChange={this.inputValue}
                 value={name}
               />
               <textarea
                 className="comment-field"
-                placeholder="Your Comment"
+                placeholder="Votre commentaire"
                 onChange={this.textValue}
                 value={comment}
               />
               <button type="submit" className="btn">
-                Add Comment
+                Envoyez
               </button>
             </form>
           </div>
