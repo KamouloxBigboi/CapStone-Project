@@ -4,11 +4,12 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./page.css"
 import PostCard from "./PostCard";
-import NavBar from "./NavBar";
+import NavBar from "./Navbar";
 import Footer from "./Footer"
+import Navbar from './Navbar'
+import useSticky from './hooks/useSticky.js'
 
-// import id from "./PageArticle/:id"
-
+// import id from "/posts/:id"
 
 const linkStyle = {
     margin: "3rem",
@@ -41,12 +42,17 @@ export default function MainPage() {
         getAllPosts()
     }, [])
 
+    // Déclare la variable isSticky
+
+    const { isSticky, element } = useSticky()
+
         // Mapper tous les posts fetchés et afficher tous les liens
     
     return (
 
         <>
-            {/* <NavBar /> */}
+            <Navbar sticky={isSticky} />
+                
             <main style={{ padding: "1rem 0"}}>
 
                 <h2> Retrouvez tous les articles du mois </h2>
@@ -54,9 +60,11 @@ export default function MainPage() {
                 <div id="posts_box">
                     { posts.map((post) => {
                         return (
-                            <Link to={`/posts/${post.id}`} style={linkStyle}>
-                                <PostCard post={post} />
-                            </Link>
+                            <>
+                                <Link to={`/posts/${post.id}`} style={linkStyle}>
+                                    <PostCard post={post} />
+                                </Link>
+                            </>
                         )
                     })}
                 </div>

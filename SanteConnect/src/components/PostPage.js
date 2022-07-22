@@ -46,7 +46,7 @@ export default function PostPage() {
                 <div id="postPage_Box_Title"> {post.title} </div>
                 <div id="postPage_box"> {post.body} </div>
                 <div id="comments"> 
-                  <Comments />
+                     {/* <Comments arrayList={post.comments}/> */}
                 </div>
             </main>
             <Footer />
