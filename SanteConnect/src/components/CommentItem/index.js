@@ -4,11 +4,11 @@ const CommentItem = props => {
   const {arrayList, deleteComment, toggleFavorite} = props
   const {
     id,
-    firstName,
-    name,
-    comment,
+    firstNames,
+    names,
+    comments,
     newClass,
-    date,
+    dates,
     isFavorite,
   } = arrayList
   const imgUrl = isFavorite
@@ -24,20 +24,20 @@ const CommentItem = props => {
   return (
     <li className="comment-item" key={id}>
       <div className="content-holder">
-        <p className={`user-icon ${newClass}`}>{firstName}</p>
+        <p className={`user-icon ${newClass}`}>{firstNames}</p>
         <div className="sub-holder">
           <div className="name-holder">
-            <h1 className="username">{name}</h1>
-            <p className="time-now">{date}</p>
+            <h1 className="username">{names}</h1>
+            <p className="time-now">{dates}</p>
           </div>
-          <p className="comment-line">{comment}</p>
+          <p className="comment-line">{comments}</p>
         </div>
       </div>
       <div className="icons-holder">
         <button type="button" className="like-btn" onClick={favButton}>
           <img src={imgUrl} className="image2" alt="like" />
         </button>
-        <p className={`icon-name ${addClass}`}> Liker </p>
+        <p className={`icon-name ${addClass}`}>Like</p>
         <button
           type="button"
           className="del-btn"

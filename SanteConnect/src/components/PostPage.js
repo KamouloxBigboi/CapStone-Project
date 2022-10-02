@@ -2,9 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import './page.css'
+import './page.css';
+import './post_img.css';
 import Footer from "./Footer";
-import Comments from "./Comments/index";
+import Comments from "./Comments";
+// import Comments from "./Comments/index";
 // import LongText from "./LongText";
 
 
@@ -19,8 +21,8 @@ export default function PostPage() {
     let params = useParams();
 
     const getOnePost = () => { 
-        fetch(`https://jsonplaceholder.typicode.com/posts/${params.id}`)
-            .then((response) => response.json())
+        fetch(`http://localhost:5000/posts/${params.id}`)
+            .then((res) => res.json())
             // .then((json) => console.log(json));
             .then((json) => setPost(json))
             .catch((err) => console.log(err));
@@ -44,9 +46,13 @@ export default function PostPage() {
                 <Link to="/mainpage" > <button id="return_button"> Retour aux articles </button> </Link>
 
                 <div id="postPage_Box_Title"> {post.title} </div>
-                <div id="postPage_box"> {post.body} </div>
+                <img id="post_img" src={post.imgURL}></img>
+                <div id="postPage_box"> {post.text} </div>
+                <div id="postPage_box"> {post.author} </div>
+                <div id="postPage_box"> {post.date} </div>
+
                 <div id="comments"> 
-                     {/* <Comments arrayList={post.comments}/> */}
+                     <Comments />
                 </div>
             </main>
             <Footer />

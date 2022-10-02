@@ -29,7 +29,7 @@ export default function MainPage() {
     let params = useParams();
 
     const getAllPosts = () => { 
-        fetch("https://jsonplaceholder.typicode.com/posts/")
+        fetch("http://localhost:5000/posts")
             .then((response) => response.json())
             // .then((json) => console.log(json));
             .then((json) => setPosts(json))
@@ -37,34 +37,32 @@ export default function MainPage() {
     }
 
     useEffect(() => { 
-        
-        console.log(params);
         getAllPosts()
     }, [])
 
     // Déclare la variable isSticky
 
-    const { isSticky, element } = useSticky()
+    // const { isSticky, element } = useSticky()
 
         // Mapper tous les posts fetchés et afficher tous les liens
     
     return (
 
         <>
-            <Navbar sticky={isSticky} />
+            {/* <Navbar sticky={isSticky} /> */}
                 
             <main style={{ padding: "1rem 0"}}>
 
                 <h2> Retrouvez tous les articles du mois </h2>
     
                 <div id="posts_box">
-                    { posts.map((post) => {
+                    { posts.map((post, index) => {
                         return (
-                            <>
-                                <Link to={`/posts/${post.id}`} style={linkStyle}>
+                            <div key={post._id}>
+                                <Link to={`/posts/${post._id}`} style={linkStyle}>
                                     <PostCard post={post} />
                                 </Link>
-                            </>
+                            </div>
                         )
                     })}
                 </div>
