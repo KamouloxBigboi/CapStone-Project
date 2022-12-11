@@ -1,4 +1,4 @@
-import commentModel from "../models/comment.js";
+import Comment from "../models/comment.js";
 import express from 'express';
 
 const router = express.Router();
@@ -7,26 +7,37 @@ const router = express.Router();
 
 // Get comments
 
-router.get("/", async (request, response) => {
-  const users = await commentModel.find({});
+router.get("/", async (req, res) => {
+  const comment = await Comment.find({});
 
   try {
-    response.send(users);
-  } catch (error) {
-    response.status(500).send(error);
+    res.send(comment);
+  } catch (err) {
+    res.status(500).send(err);
   }
 });
 
 // Post comment
 
-router.post("/", async (request, response) => {    
-    const comment = new commentModel(request.body);
+router.post("/", async (req, res) => {    
+    const comment = new commentModel(req.body);
   
     try {
       await comment.save();
-      response.send(comment);
+      res.send(comment);
     } catch (error) {
-      response.status(500).send(error);
+      res.status(500).send(err);
+    }
+});
+
+router.delete("/", async (req, res) => {
+    const comment =  await commentModel.delete(request.body);
+
+    try {
+      await comment.delete();
+      res.send(comment);
+    } catch (error) {
+      res.status(500).send(err);
     }
 });
 

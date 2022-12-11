@@ -11,6 +11,7 @@ import MainPage from './components/MainPage';
 import Forum from './components/Forum';
 import PostPage from './components/PostPage';
 import SignUp from './components/SignUp';
+import Comments from './components/Comments';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +22,7 @@ root.render(
         <Route path="/forum" element={<Forum />} />
         <Route path="/posts/:id" element={<PostPage />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path='/comments' element={<Comments />} />
         
     </Routes>
   </BrowserRouter>

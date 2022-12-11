@@ -20,7 +20,7 @@ const linkStyle = {
 
 export default function MainPage() {
     
-    /* fonction qui Fetch tous les posts au premier  montage du composant :useEffect  */
+    /* fonction qui Fetch tous les posts au premier montage du composant :useEffect  */
     
     
     // déclarer un state 'posts'
